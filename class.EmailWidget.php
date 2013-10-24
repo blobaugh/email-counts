@@ -2,10 +2,10 @@
 
 require_once( 'class.BlobImap.php' );
 
-class BlobEmailWidget extends WP_Widget {
+class InboxStatusWidget extends WP_Widget {
 
 	public function __construct() {
-	    parent::WP_Widget( false, $name = __( 'Email Count', 'blob_email_count' ) );
+	    parent::WP_Widget( false, $name = __( 'Email Count', 'inbox_status_email_count' ) );
 	}
 
         public function widget( $args, $instance ) {
@@ -17,7 +17,7 @@ class BlobEmailWidget extends WP_Widget {
 	    );
 	    $instance = wp_parse_args( $instance, $defaults );
 
-	    $e = new BlobImap();
+	    $e = new InboxStatusImap();
 	    $e->create_connection( $instance['server'], $instance['user'], $instance['pass'] );
 
 
@@ -86,5 +86,5 @@ class BlobEmailWidget extends WP_Widget {
 } // end class
 
 add_action( 'widgets_init', function(){
-         register_widget( 'BlobEmailWidget' );
+         register_widget( 'InboxStatusWidget' );
 });
