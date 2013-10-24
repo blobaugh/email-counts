@@ -8,7 +8,7 @@
     Author URI: http://ben.lobaugh.net
 */
 
-require_once( 'class.BlobImap.php' );
+require_once( 'class.InboxStatusImap.php' );
 require_once( 'class.EmailWidget.php' );
 
 
